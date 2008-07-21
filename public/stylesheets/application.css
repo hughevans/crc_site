@@ -8,13 +8,13 @@ body {
   font-size: 14px; }
 
 #wrapper {
-  width: 950px;
+  width: 930px;
   margin: 0 auto;
   padding: 0;
   text-align: left; }
 
 #content {
-  width: 600px;
+  width: 650px;
   float: left;
   margin: 100px 0;
   padding: 0; }
