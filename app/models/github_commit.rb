@@ -8,7 +8,7 @@ class GithubCommit < Hash
 
     # Grab each user's info and put their repositories into the stack
     users.each do |u|
-      JSON.parse(open("#{BASE_URL}/#{u}").read)['user']['repositories'].each do |r|
+      JSON.parse(open("#{BASE_URL}/#{u.github_user}").read)['user']['repositories'].each do |r|
         repos << r['url'].gsub('http://github.com/', '')
       end
     end

@@ -7,53 +7,77 @@ body {
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px; }
 
-#wrapper {
+.wrapper {
   width: 950px;
   margin: 0 auto;
   padding: 0;
   text-align: left; }
 
-#content {
+.content {
   width: 600px;
   float: left;
-  margin: 100px 0;
+  margin: 0;
   padding: 0; }
-  #content a {
-    color: #c31c1c;
-    text-decoration: none; }
-  #content a:hover {
-    text-decoration: underline; }
-  #content p {
-    line-height: 20px;
-    text-align: justify; }
-  #content pre {
-    background-color: #232323;
-    border: 1px solid #000000;
-    font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
-    color: #e6e0db;
-    padding: 10px;
-    font-size: 14px;
-    margin: 20px 0 30px; }
-  #content h1 {
-    font-size: 26px; }
-  #content h2 {
-    font-size: 22px; }
-  #content .snapshot {
-    text-align: center; }
-  #content #peeps {
-    margin: -5px 0 30px; }
-    #content #peeps .peep {
-      background: url(/images/gravatar-bg.png) no-repeat;
-      margin: 5px 0;
-      width: 100px;
-      height: 100px;
-      float: left; }
-      #content #peeps .peep img {
-        padding: 18px;
-        margin: 0; }
 
-#sidebar {
+a {
+  color: #c31c1c;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+p {
+  line-height: 20px;
+  text-align: justify; }
+
+pre {
+  background-color: #232323;
+  border: 1px solid #000000;
+  font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
+  color: #e6e0db;
+  padding: 10px;
+  font-size: 14px;
+  margin: 20px 0 30px; }
+
+h1 {
+  font-size: 26px; }
+
+h2 {
+  font-size: 22px; }
+
+.snapshot {
+  text-align: center; }
+
+.sidebar {
   width: 250px;
   float: right;
   margin: 20px 0 0;
   padding: 0; }
+
+#main {
+  margin: 0;
+  padding: 0; }
+  #main .content {
+    margin: 100px 0; }
+
+#peeps {
+  margin: 0 0 30px; }
+  #peeps .peep {
+    background: url(/images/gravatar-bg.png) no-repeat;
+    margin: 0;
+    width: 100px;
+    height: 100px;
+    float: left; }
+    #peeps .peep img {
+      padding: 18px;
+      margin: 0; }
+
+#footer {
+  clear: both;
+  height: 105px;
+  background-color: #000000;
+  color: #e6e0db; }
+  #footer .content {
+    margin: 30px 0 0; }
+  #footer .sidebar {
+    margin: 0; }
