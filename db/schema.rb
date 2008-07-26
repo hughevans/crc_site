@@ -57,4 +57,13 @@ ActiveRecord::Schema.define(:version => 20080726052648) do
     t.integer  "exit_status",    :limit => 11
   end
 
+  create_table "people", :force => true do |t|
+    t.string   "username"
+    t.string   "name"
+    t.string   "email"
+    t.string   "github_user"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
