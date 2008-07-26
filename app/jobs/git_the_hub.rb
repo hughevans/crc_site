@@ -24,5 +24,3 @@ end
 commits.sort! do |a, b|
   Time.parse(b['committed_date']) <=> Time.parse(a['committed_date'])
 end
-
-p commits
