@@ -33,7 +33,7 @@
         %h2 Peeps
         
         #peeps
-          - Person.all.each do |p|
+          - (Person.all.sort_by{rand}).each do |p|
             %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
       
       #sidebar
