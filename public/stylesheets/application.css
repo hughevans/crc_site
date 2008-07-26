@@ -8,13 +8,13 @@ body {
   font-size: 14px; }
 
 #wrapper {
-  width: 930px;
+  width: 950px;
   margin: 0 auto;
   padding: 0;
   text-align: left; }
 
 #content {
-  width: 650px;
+  width: 600px;
   float: left;
   margin: 100px 0;
   padding: 0; }
@@ -40,6 +40,17 @@ body {
     font-size: 22px; }
   #content .snapshot {
     text-align: center; }
+  #content #peeps {
+    margin: 20px 0 30px; }
+    #content #peeps .peep {
+      background: url(/images/gravatar-bg.png) no-repeat;
+      margin: 5px;
+      width: 100px;
+      height: 100px;
+      float: left; }
+      #content #peeps .peep img {
+        padding: 18px;
+        margin: 0; }
 
 #sidebar {
   width: 250px;

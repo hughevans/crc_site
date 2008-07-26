@@ -41,18 +41,18 @@ describe Person do
   
   it "should not be valid without a non-unique email"
   
-  # it "should be valid with a valid and real email" do
-  #   valid_email_addresses.each do |valid_email_address|
-  #     @person.attributes = valid_person_attributes.with(:email => valid_email_address)
-  #     @person.should be_valid
-  #   end
-  # end
-  # 
-  # it "should not be valid without a valid and real email" do
-  #   invalid_email_addresses.each do |invalid_email_address|
-  #     @person.attributes = valid_person_attributes.with(:email => invalid_email_address)
-  #     @person.should have_at_least(1).error_on(:email)
-  #   end
-  # end
+  it "should be valid with a valid and real email" do
+    valid_email_addresses.each do |valid_email_address|
+      @person.attributes = valid_person_attributes.with(:email => valid_email_address)
+      @person.should be_valid
+    end
+  end
+  
+  it "should not be valid without a valid and real email" do
+    invalid_email_addresses.each do |invalid_email_address|
+      @person.attributes = valid_person_attributes.with(:email => invalid_email_address)
+      @person.should have_at_least(1).error_on(:email)
+    end
+  end
   
 end

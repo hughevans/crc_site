@@ -32,6 +32,12 @@
           now for those who want to use it:
         %pre
           http://groups.google.com/group/canberra-ruby
+          
+        %h2 Peeps
+        
+        #peeps
+          - Person.all.each do |p|
+            %div.peep= image_tag(p.gravatar_url(:size => 64))
       
       #sidebar
         = image_tag 'crc.png'
