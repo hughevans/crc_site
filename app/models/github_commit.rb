@@ -1,7 +1,7 @@
 class GithubCommit < Hash
   BASE_URL = "http://github.com/api/v1/json"
   
-  def self.find_all
+  def self.all
     users   = Person.all(:select => 'github_user', :conditions => 'github_user IS NOT NULL')
     repos   = []
     commits = []
