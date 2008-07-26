@@ -12,11 +12,11 @@ module PersonSpecHelper
   end
   
   def valid_email_addresses
-    ['jane@example.com', 'gene@example.com', 'dino.dino@example.foo.au']
+    ['jane@example.com', 'gene@example.com', 'dino.dino@example.foo.au', "a'postrophe@example.com"]
   end
   
   def invalid_email_addresses
-    ['ssjdhfklj@dfslkghjdksfjh.com', 'string']
+    ['missingatseparator', 'missingdomainpart@', '@missingname.part', 'missing@tld', 'has a@space.com']
   end
   
 end
