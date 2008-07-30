@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.site '/:name', :controller => 'page', :action => 'show'
   
-  map.root :controller => 'application', :action => 'testing'
+  map.root :controller => 'page', :action => 'show', :name => 'home'
   
 end
