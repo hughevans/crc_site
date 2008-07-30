@@ -24,23 +24,26 @@
     %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
       
 - content_for(:sidebar) do
-  %h3 Don't Panic
-  %p Here's what you need to get started:
-  %ol
-    %li
-      get yourself a 
-      = link_to 'gravatar', 'http://en.gravatar.com/'
-    %li
-      sign up with
-      = link_to 'github', 'http://github.com'
-    %li
-      grab a copy of the crc_site
-    %li
-      start contributing!
-  %h3 Building Blocks
-  %p This site is built with:
-  %ul
-    %li Rails 2.1
-    %li RSpec
-    %li Haml
-    %li Sass
+
+  - if Rails.env == 'development'
+
+    %h3 Don't Panic
+    %p Here's what you need to get started:
+    %ol
+      %li
+        get yourself a 
+        = link_to 'gravatar', 'http://en.gravatar.com/'
+      %li
+        sign up with
+        = link_to 'github', 'http://github.com'
+      %li
+        grab a copy of the crc_site
+      %li
+        start contributing!
+    %h3 Building Blocks
+    %p This site is built with:
+    %ul
+      %li Rails 2.1
+      %li RSpec
+      %li Haml
+      %li Sass

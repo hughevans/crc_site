@@ -20,8 +20,11 @@
     #footer
       %div.wrapper
         %div.content
-          %p
-            ="© #{current_year}"
-            Canberra Ruby Crew
+          %ul
+            %li="© #{current_year} Canberra Ruby Crew"
+            %li.pipe|
+            %li= link_to 'Ruby', 'http://ruby-lang.org'
+            %li.pipe|
+            %li= link_to 'Ruby on Rails Oceania', 'http://rubyonrails.com.au'
         %div.sidebar
           = image_tag 'crc_small.png'

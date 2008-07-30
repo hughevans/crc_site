@@ -77,7 +77,23 @@ h2 {
   height: 105px;
   background-color: #000000;
   color: #e6e0db; }
-  #footer .content {
-    margin: 30px 0 0; }
+  #footer .content ul {
+    margin: 48px 0;
+    padding: 0; }
+  #footer .content li {
+    margin: 0 0 0 5px;
+    padding: 0;
+    display: inline;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none; }
+  #footer .content .pipe {
+    font-weight: normal;
+    color: #dbdadb; }
+  #footer .content a {
+    color: #e6e0db;
+    text-decoration: underline; }
+  #footer .content a:hover {
+    color: #c31c1c; }
   #footer .sidebar {
     margin: 0; }
