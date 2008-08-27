@@ -30,7 +30,7 @@ p {
   line-height: 20px;
   text-align: justify; }
 
-pre {
+pre, .commit_message {
   background-color: #232323;
   border: 1px solid #000000;
   font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
@@ -38,6 +38,12 @@ pre {
   padding: 10px;
   font-size: 14px;
   margin: 20px 0 30px; }
+
+.commit_message {
+  margin: 10px 0; }
+
+.commit {
+  margin-bottom: 30px; }
 
 h1 {
   font-size: 26px; }

@@ -24,4 +24,28 @@ class GithubCommit < Hash
       Time.parse(b['committed_date']) <=> Time.parse(a['committed_date'])
     end
   end
+  
+  def project_name
+    self['url'].split('/')[4]
+  end
+  
+  def project_url
+    self['url'].gsub(/\/commit.*$/, '')
+  end
+  
+  def author_name
+    self['author']['name']
+  end
+  
+  def message
+    self['message']
+  end
+  
+  def url
+    self['url']
+  end
+  
+  def commit_id
+    self['id']
+  end
 end

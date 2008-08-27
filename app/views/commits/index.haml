@@ -1,0 +1,13 @@
+%h1 CRC Hacks
+
+- for commit in @commits
+  .commit
+    %h3
+      = commit.author_name
+      committed to
+      = link_to(commit.project_name, commit.project_url)
+    .commit_message
+      = commit.message
+    %p
+      In commit:
+      = link_to(commit.commit_id, commit.url)
