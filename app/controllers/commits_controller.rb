@@ -1,4 +1,6 @@
 class CommitsController < ApplicationController
+  caches_page :index
+  
   def index
     @commits = GithubCommit.all
     
