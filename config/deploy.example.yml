@@ -1,0 +1,4 @@
+app_server: 127.0.0.1
+ssh_port: 22
+deploy_to: '/home/user/crc_site/'
+use_sudo: false
