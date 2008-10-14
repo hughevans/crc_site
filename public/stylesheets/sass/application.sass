@@ -87,15 +87,17 @@ h2
       :margin =  48px 0
       :padding = 0
     li
-      :margin = 0 0 0 5px
+      :margin = 0
       :padding = 0
       :display = inline
       :list-style-image = none
       :list-style-position = outside
       :list-style-type = none
     li:after
-      :content = " | "
+      :content = "' | '"
       :color = #DBDADB
+    li:last-child:after
+      :content = "''"
     a
       :color = #e6e0db
       :text-decoration = underline
