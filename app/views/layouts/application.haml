@@ -14,7 +14,8 @@
           = yield
       
         %div.sidebar
-          = image_tag 'crc.png'
+          %a{:href => '/'}
+            = image_tag 'crc.png'
           = yield :sidebar
             
     #footer

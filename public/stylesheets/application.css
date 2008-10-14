@@ -105,3 +105,6 @@ h2 {
 
 .clearfix {
   clear: both; }
+
+a img {
+  border: 0; }
