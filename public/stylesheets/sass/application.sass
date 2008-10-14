@@ -80,7 +80,6 @@ h2
 
 #footer
   :clear = both
-  :height = 105px
   :background-color = #000
   :color = #e6e0db
   .content
@@ -94,8 +93,8 @@ h2
       :list-style-image = none
       :list-style-position = outside
       :list-style-type = none
-    .pipe
-      :font-weight = normal
+    li:after
+      :content = " | "
       :color = #DBDADB
     a
       :color = #e6e0db
@@ -104,3 +103,6 @@ h2
       :color = #c31c1c
   .sidebar
     :margin = 0
+
+.clearfix
+  :clear = both

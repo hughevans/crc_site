@@ -80,7 +80,6 @@ h2 {
 
 #footer {
   clear: both;
-  height: 105px;
   background-color: #000000;
   color: #e6e0db; }
   #footer .content ul {
@@ -93,8 +92,8 @@ h2 {
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none; }
-  #footer .content .pipe {
-    font-weight: normal;
+  #footer .content li:after {
+    content:  | ;
     color: #dbdadb; }
   #footer .content a {
     color: #e6e0db;
@@ -103,3 +102,6 @@ h2 {
     color: #c31c1c; }
   #footer .sidebar {
     margin: 0; }
+
+.clearfix {
+  clear: both; }
