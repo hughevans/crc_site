@@ -80,22 +80,23 @@ h2 {
 
 #footer {
   clear: both;
-  height: 105px;
   background-color: #000000;
   color: #e6e0db; }
   #footer .content ul {
     margin: 48px 0;
     padding: 0; }
   #footer .content li {
-    margin: 0 0 0 5px;
+    margin: 0;
     padding: 0;
     display: inline;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none; }
-  #footer .content .pipe {
-    font-weight: normal;
+  #footer .content li:after {
+    content: ' | ';
     color: #dbdadb; }
+  #footer .content li:last-child:after {
+    content: ''; }
   #footer .content a {
     color: #e6e0db;
     text-decoration: underline; }
@@ -103,3 +104,9 @@ h2 {
     color: #c31c1c; }
   #footer .sidebar {
     margin: 0; }
+
+.clearfix {
+  clear: both; }
+
+a img {
+  border: 0; }

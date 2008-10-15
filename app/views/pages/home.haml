@@ -7,8 +7,12 @@
 %pre
   git://github.com/artpop/crc_site.git
 
-%h2 Meetings
-%p As for the meetings themselves we are still looking for an appropriate venue as we have outgrown most people's lounge rooms now. We are also tying up some sponsorship to help with the costs of this as well as hosting this site on a slice which we can all experiment with. Meetings are meant to be held on the last Friday of the month.
+%h2 Hacks
+%p
+  Check out our
+  %a{:href => commits_path} hacks pages
+  which pulls all the CRC peeps commits from github tagged with #crc in the description.
+
 %h2 Mailing List
 %p 
   A Canberra specific Ruby and Rails
@@ -17,33 +21,10 @@
 %pre
   http://groups.google.com/group/canberra-ruby
 
-%h2 Peeps
+%h2 Meetings
+%p We aim to have meetups on the last Wednesday of the month.
 
+%h2 Peeps
 #peeps
   - (Person.all.sort_by{rand}).each do |p|
     %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
-      
-- content_for(:sidebar) do
-
-  - if Rails.env == 'development'
-
-    %h3 Don't Panic
-    %p Here's what you need to get started:
-    %ol
-      %li
-        get yourself a 
-        = link_to 'gravatar', 'http://en.gravatar.com/'
-      %li
-        sign up with
-        = link_to 'github', 'http://github.com'
-      %li
-        grab a copy of the crc_site
-      %li
-        start contributing!
-    %h3 Building Blocks
-    %p This site is built with:
-    %ul
-      %li Rails 2.1
-      %li RSpec
-      %li Haml
-      %li Sass
