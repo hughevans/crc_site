@@ -28,3 +28,11 @@
 #peeps
   - (Person.all.sort_by{rand}).each do |p|
     %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
+    
+- content_for(:sidebar) do
+  %h2 Tweets
+  - for tweet in @tweets do
+    %p.tweet
+      %a{:href => tweet.link}= tweet.full_name
+      = tweet.text
+  

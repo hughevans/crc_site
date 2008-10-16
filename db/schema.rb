@@ -11,11 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20081015120059) do
 
-  create_table "attendance", :id => false, :force => true do |t|
-    t.integer "meeting_id", :limit => 11
-    t.integer "person_id",  :limit => 11
-  end
-
   create_table "bj_config", :primary_key => "bj_config_id", :force => true do |t|
     t.text "hostname"
     t.text "key"
@@ -62,21 +57,6 @@ ActiveRecord::Schema.define(:version => 20081015120059) do
     t.integer  "exit_status",    :limit => 11
   end
 
-  create_table "comments", :force => true do |t|
-    t.text     "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "person_id",  :limit => 11
-    t.integer  "topic_id",   :limit => 11
-  end
-
-  create_table "meetings", :force => true do |t|
-    t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "venue"
-  end
-
   create_table "people", :force => true do |t|
     t.string   "username"
     t.string   "name"
@@ -85,15 +65,6 @@ ActiveRecord::Schema.define(:version => 20081015120059) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "twitter_user"
-  end
-
-  create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "meeting_id",  :limit => 11
   end
 
 end
