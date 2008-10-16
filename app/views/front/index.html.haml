@@ -31,4 +31,8 @@
     
 - content_for(:sidebar) do
   %h2 Tweets
-  heh
+  - for tweet in @tweets do
+    %p.tweet
+      %a{:href => tweet.link}= tweet.full_name
+      = tweet.text
+  
