@@ -34,5 +34,5 @@
   - for tweet in @tweets do
     %p.tweet
       %a{:href => tweet.link}= tweet.full_name
-      = tweet.text
+      = auto_link(tweet.text)
   
