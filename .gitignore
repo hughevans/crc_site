@@ -6,3 +6,7 @@ doc/app
 coverage
 config/database.yml
 config/config.yml
+config/deploy.yml
+public/cache
+public/index.html
+public/hacks.html

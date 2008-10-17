@@ -28,6 +28,7 @@ Rails::Initializer.run do |config|
   config.gem 'bj'
   config.gem 'json'
   config.gem 'gravtastic'
+  config.gem 'hpricot'
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -67,7 +68,14 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  # TODO - isolate the page cache directory
+  # config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+  #
+  # This will require web server config file to be modified. See:
+  # http://www.railsenvy.com/2007/2/28/rails-caching-tutorial
 end
 
 require 'open-uri'
 require 'time'
+require 'ostruct'

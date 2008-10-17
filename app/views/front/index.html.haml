@@ -22,9 +22,17 @@
   http://groups.google.com/group/canberra-ruby
 
 %h2 Meetings
-%p We aim to have meetups on the last Wednesday of the month.
+%p== We aim to have meetups on the last Wednesday of the month. According to the calendar that may well be #{next_meeting_date} (check for announcements in the mailing list).
 
 %h2 Peeps
 #peeps
   - (Person.all.sort_by{rand}).each do |p|
     %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
+    
+- content_for(:sidebar) do
+  %h2 Tweets
+  - for tweet in @tweets do
+    %p.tweet
+      %a{:href => tweet.link}= tweet.full_name
+      = auto_link(tweet.text)
+  

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080726052648) do
+ActiveRecord::Schema.define(:version => 20081015120059) do
 
   create_table "bj_config", :primary_key => "bj_config_id", :force => true do |t|
     t.text "hostname"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20080726052648) do
     t.string   "github_user"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "twitter_user"
   end
 
 end
