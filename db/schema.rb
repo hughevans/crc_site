@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081015120059) do
+ActiveRecord::Schema.define(:version => 20081018210850) do
 
   create_table "bj_config", :primary_key => "bj_config_id", :force => true do |t|
     t.text "hostname"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20081015120059) do
     t.text     "stdout"
     t.text     "stderr"
     t.integer  "exit_status",    :limit => 11
+  end
+
+  create_table "meetings", :force => true do |t|
+    t.datetime "date"
+    t.string   "venue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "people", :force => true do |t|

@@ -1,0 +1,19 @@
+%h1 Editing meeting
+
+- form_for(@meeting) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :date
+    %br
+    = f.datetime_select :date
+  %p
+    = f.label :venue
+    %br
+    = f.text_field :venue
+  %p
+    = f.submit "Update"
+
+= link_to 'Show', @meeting
+|
+= link_to 'Back', meetings_path

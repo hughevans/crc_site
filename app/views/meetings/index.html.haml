@@ -1,0 +1,18 @@
+%h1 Listing meetings
+
+%table
+  %tr
+    %th Date
+    %th Venue
+
+- for meeting in @meetings
+  %tr
+    %td=h meeting.date
+    %td=h meeting.venue
+    %td= link_to 'Show', meeting
+    %td= link_to 'Edit', edit_meeting_path(meeting)
+    %td= link_to 'Destroy', meeting, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New meeting', new_meeting_path

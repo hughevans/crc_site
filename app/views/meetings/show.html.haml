@@ -1,0 +1,11 @@
+%p
+  %strong Date:
+  =h @meeting.date
+
+%p
+  %strong Venue:
+  =h @meeting.venue
+
+= link_to 'Edit', edit_meeting_path(@meeting)
+|
+= link_to 'Back', meetings_path

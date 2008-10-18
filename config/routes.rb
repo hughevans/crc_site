@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :meetings
+
 
   map.commits '/hacks', :controller => 'commits'
 

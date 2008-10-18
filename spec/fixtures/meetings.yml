@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2008-10-19 08:08:50
+  venue: MyString
+
+two:
+  date: 2008-10-19 08:08:50
+  venue: MyString
