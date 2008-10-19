@@ -31,8 +31,4 @@
     
 - content_for(:sidebar) do
   %h2 Tweets
-  - for tweet in @tweets do
-    %p.tweet
-      %a{:href => tweet.link}= tweet.full_name
-      = auto_link(tweet.text)
-  
+  = render :partial => 'tweet', :collection => @tweets
