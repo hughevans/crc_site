@@ -1,6 +1,6 @@
-class CreateParticipations < ActiveRecord::Migration
+class CreateAttendances < ActiveRecord::Migration
   def self.up
-    create_table :participations do |t|
+    create_table :attendances do |t|
       t.integer :person_id
       t.integer :meeting_id
       t.timestamps
@@ -8,6 +8,6 @@ class CreateParticipations < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :participations
+    drop_table :attendances
   end
 end
