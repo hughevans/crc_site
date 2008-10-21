@@ -1,0 +1,26 @@
+- content_for :head do
+  = stylesheet_link_tag 'ui.datepicker.css'
+  = javascript_include_tag 'ui.datepicker.js'
+  :javascript
+    $(document).ready(function(){
+      $("#meeting_date").datepicker({ 
+          dateFormat: "DD, MM d, yy", 
+          showOn: "both", 
+          buttonImage: "/images/calendar.gif", 
+          buttonImageOnly: true 
+      });
+    });
+
+- form_for(@meeting) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :date
+    %br
+    = f.text_field :date, :id => 'meeting_date'
+  %p
+    = f.label :venue
+    %br
+    = f.text_field :venue
+  %p
+    = f.submit "Save"

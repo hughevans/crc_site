@@ -1,18 +1,6 @@
-%h1 Editing meeting
+%h1 Edit a meeting
 
-- form_for(@meeting) do |f|
-  = f.error_messages
-
-  %p
-    = f.label :date
-    %br
-    = f.datetime_select :date
-  %p
-    = f.label :venue
-    %br
-    = f.text_field :venue
-  %p
-    = f.submit "Update"
+= render :partial => 'form'
 
 = link_to 'Show', @meeting
 |
