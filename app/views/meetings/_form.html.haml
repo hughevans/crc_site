@@ -22,5 +22,11 @@
     = f.label :venue
     %br
     = f.text_field :venue
+  %h4 Attendees
+  %ul{ :style => 'list-style:none; padding-left: 0'}
+    - for person in Person.all
+      %li
+        = check_box_tag "meeting[attendee_ids][]", person.id, @meeting.attendees.include?(person)
+        = person.name
   %p
     = f.submit "Save"

@@ -36,6 +36,7 @@ class MeetingsController < ApplicationController
 
   # PUT /meetings/1
   def update
+    params[:meeting][:attendee_ids] ||= []
     @meeting = Meeting.find(params[:id])
     if @meeting.update_attributes(params[:meeting])
       flash[:notice] = 'Meeting was successfully updated.'

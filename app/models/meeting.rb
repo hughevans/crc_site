@@ -9,7 +9,7 @@ class Meeting < ActiveRecord::Base
   named_scope :past, :conditions => ['date < ?', Date.today], :order => 'date DESC'
   
   has_many    :attendances,  :dependent => :destroy
-  has_many    :attendees,    :through => :attendances, :source => :person
+  has_many    :attendees,    :through => :attendances, :order => :name, :source => :person
 
   validates_presence_of :date
   validates_presence_of :venue

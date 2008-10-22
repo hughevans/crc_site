@@ -6,6 +6,14 @@
   %strong Venue:
   =h @meeting.venue
 
+%p
+  %strong Attendees:
+%ul{ :style => 'list-style:none; padding-left: 0' }
+  - for person in @meeting.attendees
+    %li.peep
+      = image_tag(person.gravatar_url(:size => 32), :alt => person.name, :valign => 'middle')
+      = person.name
+      
 = link_to 'Edit', edit_meeting_path(@meeting)
 |
 = link_to 'Back', meetings_path
