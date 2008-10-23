@@ -7,7 +7,8 @@ class Meeting < ActiveRecord::Base
   # returns an array of all the meetings held before today in order from latest to oldest (reverse chronological order)
   # past.first returns the last held meeting prior to today
   named_scope :past, :conditions => ['date < ?', Date.today], :order => 'date DESC'
-  
+
+  has_many    :topics,       :dependent => :destroy
   has_many    :attendances,  :dependent => :destroy
   has_many    :attendees,    :through => :attendances, :order => :name, :source => :person
 

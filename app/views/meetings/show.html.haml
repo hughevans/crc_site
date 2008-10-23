@@ -5,6 +5,15 @@
 %p
   %strong Venue:
   =h @meeting.venue
+  
+%p
+  %strong Topics:
+%ul
+  - for topic in @meeting.topics
+    %li
+      = link_to topic.title, topic.link
+      \-
+      = topic.description
 
 %p
   %strong Attendees:
