@@ -1,3 +1,5 @@
+= flash[:notice]
+
 %p
   %strong Date:
   =h @meeting.date
@@ -9,11 +11,8 @@
 %p
   %strong Topics:
 %ul
-  - for topic in @meeting.topics
-    %li
-      = link_to topic.title, topic.link
-      \-
-      = topic.description
+
+= link_to 'Create new topic', new_topic_path
 
 %p
   %strong Attendees:
@@ -26,3 +25,43 @@
 = link_to 'Edit', edit_meeting_path(@meeting)
 |
 = link_to 'Back', meetings_path
+
+%ul#topic_list
+  = render :partial => 'topic', :collection => Topic.all
+
+%a#new_topic Add new topic
+:javascript
+  $(document).ready(function(){
+    $("#add_topic").hide();    
+    $("a#new_topic").toggle(function(){
+      $("#add_topic").show('slow');
+    },function(){
+      $("#add_topic").hide('slow');
+    });
+  });
+
+#add_topic
+  %h1 Editing topic
+
+  - form_remote_for :topic, :url => topics_path, :html => { :id => 'topic_form' } do |f|
+    = f.error_messages
+
+    %p
+      = f.label :title
+      %br
+      = f.text_field :title
+
+    %p
+      = f.label :description
+      %br
+      = f.text_area :description
+
+    %p
+      = f.label :link
+      %br
+      = f.text_field :link
+
+    = f.hidden_field :meeting_id, :value => @meeting.id
+
+    %p
+      = f.submit "Update"

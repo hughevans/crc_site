@@ -1,0 +1,19 @@
+%p
+  %strong Title:
+  =h @topic.title
+
+%p
+  %strong Description:
+  =h @topic.description
+
+%p
+  %strong Link:
+  = link_to @topic.link, @topic.link
+
+%p
+  %strong Meeting:
+  =h @topic.meeting_id
+
+= link_to 'Edit', edit_topic_path(@topic)
+|
+= link_to 'Back', topics_path

@@ -1,0 +1,4 @@
+page.insert_html :bottom, :topic_list, :partial => '/meetings/topic', :object => @topic
+page[:topic_form].reset
+page.replace_html :notice, flash[:notice]
+flash.discard

@@ -1,0 +1,36 @@
+%h1 Topics
+
+%ul#topic_list
+  = render :partial => 'topic', :collection => Topic.all
+
+%h1 Editing topic
+
+- form_remote_for(@topic) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+
+  %p
+    = f.label :link
+    %br
+    = f.text_field :link
+
+  %p
+    = f.label :meeting_id
+    %br
+    = f.text_field :meeting_id
+
+  %p
+    = f.submit "Update"
+
+= link_to 'Show', @topic
+|
+= link_to 'Back', topics_path

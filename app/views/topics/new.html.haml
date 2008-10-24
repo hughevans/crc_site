@@ -1,0 +1,29 @@
+%h1 New topic
+
+- form_for(@topic) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  
+  %p
+    = f.label :link
+    %br
+    = f.text_field :link
+
+  %p
+    = f.label :meeting_id
+    %br
+    = f.text_field :meeting_id
+
+  %p
+    = f.submit "Create"
+
+= link_to 'Back', topics_path
