@@ -1,18 +1,60 @@
+- content_for :unobtrusive_javascript do
+  :javascript
+    $(document).ready(function(){
+      $("#add_topic").hide();    
+      $("a#new_topic").toggle(function(){
+        $("#add_topic").show('slow');
+        $("a#new_topic").text('Cancel');
+      },function(){
+        $("#add_topic").hide('slow');
+        $("a#new_topic").text('Add new topic');
+      });
+    });
+
 = flash[:notice]
+
+%h2 Meeting Details
 
 %p
   %strong Date:
-  =h @meeting.date
+  =h @meeting.date.to_s(:day_date)
 
+%p
+  %strong Time:
+  =h @meeting.date.to_s(:am_pm).downcase
 %p
   %strong Venue:
   =h @meeting.venue
   
 %p
   %strong Topics:
-%ul
+%ul#topic_list
+  = render :partial => 'topic', :collection => Topic.all
 
-= link_to 'Create new topic', new_topic_path
+= link_to 'Add new topic', new_topic_path, :id => "new_topic"
+
+#add_topic
+  %h3 Add a topic
+  -# TODO: should do this as unobtrusive
+  - form_remote_for :topic, :url => topics_path, :html => { :id => 'topic_form' } do |f|
+    = f.error_messages
+
+    %p
+      = f.label :title
+      = f.text_field :title
+
+    %p
+      = f.label :description
+      = f.text_field :description
+
+    %p
+      = f.label :link
+      = f.text_field :link
+
+    = f.hidden_field :meeting_id, :value => @meeting.id
+
+    %p
+      = f.submit "Update"
 
 %p
   %strong Attendees:
@@ -25,43 +67,3 @@
 = link_to 'Edit', edit_meeting_path(@meeting)
 |
 = link_to 'Back', meetings_path
-
-%ul#topic_list
-  = render :partial => 'topic', :collection => Topic.all
-
-%a#new_topic Add new topic
-:javascript
-  $(document).ready(function(){
-    $("#add_topic").hide();    
-    $("a#new_topic").toggle(function(){
-      $("#add_topic").show('slow');
-    },function(){
-      $("#add_topic").hide('slow');
-    });
-  });
-
-#add_topic
-  %h1 Editing topic
-
-  - form_remote_for :topic, :url => topics_path, :html => { :id => 'topic_form' } do |f|
-    = f.error_messages
-
-    %p
-      = f.label :title
-      %br
-      = f.text_field :title
-
-    %p
-      = f.label :description
-      %br
-      = f.text_area :description
-
-    %p
-      = f.label :link
-      %br
-      = f.text_field :link
-
-    = f.hidden_field :meeting_id, :value => @meeting.id
-
-    %p
-      = f.submit "Update"

@@ -1,4 +1,7 @@
 %li
-  = link_to topic.title, topic.link
+  - if topic.link.blank?
+    = topic.title
+  - else
+    = link_to topic.title, topic.link
   \-
   = topic.description
