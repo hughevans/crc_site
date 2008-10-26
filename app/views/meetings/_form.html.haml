@@ -1,8 +1,18 @@
 - content_for :head do
   = stylesheet_link_tag 'ui.datepicker.css'
   = javascript_include_tag 'ui.datepicker.js'
+
+- content_for :unobtrusive_javascript do
   :javascript
     $(document).ready(function(){
+      $("#add_topic").hide();    
+      $("a#new_topic").toggle(function(){
+        $("#add_topic").show('slow');
+        $("a#new_topic").text('Cancel');
+      },function(){
+        $("#add_topic").hide('slow');
+        $("a#new_topic").text('Add new topic');
+      });
       $("#meeting_date").datepicker({ 
           dateFormat: "DD, MM d, yy", 
           showOn: "both", 
@@ -10,7 +20,7 @@
           buttonImageOnly: true 
       });
     });
-
+        
 - form_for(@meeting) do |f|
   = f.error_messages
 
@@ -22,6 +32,7 @@
     = f.label :venue
     %br
     = f.text_field :venue
+
   %h4 Attendees
   %ul{ :style => 'list-style:none; padding-left: 0'}
     - for person in Person.all
@@ -30,3 +41,35 @@
         = person.name
   %p
     = f.submit "Save"
+
+- unless @meeting.new_record?
+
+  %p
+    %strong Topics:
+  %ul#topic_list
+    = render :partial => 'topic', :collection => @meeting.topics
+
+  %p= link_to 'Add new topic', new_topic_path, :id => "new_topic"
+    
+  #add_topic
+    %h3 Add a topic
+    -# TODO: should do this as unobtrusive
+    - form_remote_for :topic, :url => topics_path, :html => { :id => 'topic_form' } do |f|
+      = f.error_messages
+
+      %p
+        = f.label :title
+        = f.text_field :title
+
+      %p
+        = f.label :description
+        = f.text_field :description
+
+      %p
+        = f.label :link
+        = f.text_field :link
+
+      = f.hidden_field :meeting_id, :value => @meeting.id
+
+      %p
+        = f.submit "Update"

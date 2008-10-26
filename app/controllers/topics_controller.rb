@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
       if @topic.save
         flash[:notice] = 'Topic was successfully created.'
         # redirect_to(@topic)
-        format.html { redirect_to meeting_path(@topic.meeting_id) }
+        format.html { redirect_to edit_meeting_path(@topic.meeting_id) }
         format.js
       else
         render :action => "new"
