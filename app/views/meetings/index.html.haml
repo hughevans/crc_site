@@ -20,3 +20,12 @@
     There have not been any meetings yet
     
 %p= link_to 'Schedule a new meeting', new_meeting_path
+
+- content_for :sidebar do
+
+  %h3 Testing OpenID Login
+  
+  %input{ :id => "openid_identifier" }
+  = javascript_tag nil, { :id => "__openidselector", :src => "https://www.idselector.com/selector/35a7c32f7c9b9a1070af8f839f4b1deade415eb5", :charset =>"utf-8" }
+  
+  %p (not hooked up yet)
