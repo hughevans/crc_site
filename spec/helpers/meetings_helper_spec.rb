@@ -8,4 +8,18 @@ describe MeetingsHelper do
     included_modules.should include(MeetingsHelper)
   end
   
+  # describe "admin_only" do
+  #   it "should yield if logged in user is an admin" do
+  #     @content_block = "Inside the content block"
+  #     result = helper.admin_only { @content_block }
+  #     result.should_not equal(@content_block)
+  #   end
+  #   it "should NOT yield if user is not logged in" do
+  #     
+  #   end
+  #   it "should NOT yield if logged in user is not an admin" do
+  #     
+  #   end
+  # end
+  
 end

@@ -2,3 +2,12 @@ Flesh out the meetings function
 - I've generated a meetings scaffold and want to have a facility to record details about meetings like members who attended and what was discussed and links to any resources
 - play around with the datepicker - what about time? and customising the datepicker, maybe make it inline
 - topics should probably be a nested resource of meetings
+- fix validation/errors for adding new topics on the edit meetings view
+- probably remove jrails plugin and stop using rails js helpers (which are obtrusive) and go for something more unobtrusive
+- implement OpenID authentication system for admin editing of meeting info
+-- maybe make it really simple, only used by admins for now (maybe for members when there is commenting)
+-- only display on meetings page and it is simply a login as admins are already signed up
+- add a commenting function for meetings
+- provide mechanism for hosting and playing slides of presentations either on the site or through a third party service
+- add a mapping facility that allows meeting locations to be graphically presented
+- allow for upload of images for a meeting/event

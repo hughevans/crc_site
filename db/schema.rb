@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081023140716) do
+ActiveRecord::Schema.define(:version => 20081028233726) do
 
   create_table "attendances", :force => true do |t|
     t.integer  "person_id",  :limit => 11
@@ -71,6 +71,21 @@ ActiveRecord::Schema.define(:version => 20081023140716) do
     t.datetime "updated_at"
   end
 
+  create_table "open_id_authentication_associations", :force => true do |t|
+    t.integer "issued",     :limit => 11
+    t.integer "lifetime",   :limit => 11
+    t.string  "handle"
+    t.string  "assoc_type"
+    t.binary  "server_url"
+    t.binary  "secret"
+  end
+
+  create_table "open_id_authentication_nonces", :force => true do |t|
+    t.integer "timestamp",  :limit => 11, :null => false
+    t.string  "server_url"
+    t.string  "salt",                     :null => false
+  end
+
   create_table "people", :force => true do |t|
     t.string   "username"
     t.string   "name"
@@ -89,5 +104,20 @@ ActiveRecord::Schema.define(:version => 20081023140716) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+    t.string   "identity_url"
+  end
+
+  add_index "users", ["login"], :name => "index_users_on_login"
 
 end

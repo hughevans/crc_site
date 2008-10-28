@@ -1,3 +1,15 @@
+- content_for :sidebar do
+  = javascript_tag nil, { :id => "__openidselector", :src => "https://www.idselector.com/selector/35a7c32f7c9b9a1070af8f839f4b1deade415eb5", :charset =>"utf-8" }
+
+  %h3 OpenID Login (inactive)
+  
+  %form{:action => '/login', :method => 'post'}  
+    / %input{ :id => "openid_identifier" }
+    = text_field_tag 'openid_identifier'
+    =# submit_tag 'Go'
+
+  = logged_in? ? link_to("Log out #{current_user.email}", session_url, :method => :delete) : link_to("Log in", new_session_url)
+					  
 #next_meeting
   %h1 Next Meeting
   - unless @next_meeting.nil?
@@ -20,12 +32,3 @@
     There have not been any meetings yet
     
 %p= link_to 'Schedule a new meeting', new_meeting_path
-
-- content_for :sidebar do
-
-  %h3 Testing OpenID Login
-  
-  %input{ :id => "openid_identifier" }
-  = javascript_tag nil, { :id => "__openidselector", :src => "https://www.idselector.com/selector/35a7c32f7c9b9a1070af8f839f4b1deade415eb5", :charset =>"utf-8" }
-  
-  %p (not hooked up yet)
