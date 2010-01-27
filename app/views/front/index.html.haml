@@ -27,7 +27,8 @@
 %h2 Peeps
 #peeps
   - (Person.all.sort_by{rand}).each do |p|
-    %div.peep= image_tag(p.gravatar_url(:size => 64), :alt => p.name)
+    %div.peep
+      = gravatar_image_tag(p.email, :alt => p.name, :valign => 'middle', :gravatar => { :size => 64 })
     
 - content_for(:sidebar) do
   %h2 Tweets

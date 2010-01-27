@@ -75,4 +75,3 @@ end
 require 'open-uri'
 require 'time'
 require 'ostruct'
-require 'gravtastic'
