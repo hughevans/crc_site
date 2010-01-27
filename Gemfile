@@ -5,5 +5,5 @@ source 'http://gemcutter.org'
 
 gem 'bj'
 gem 'json'
+gem 'gravtastic'
 gem 'hpricot'
-gem 'gravatar_image_tag'
