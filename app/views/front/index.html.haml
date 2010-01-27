@@ -30,6 +30,6 @@
     %div.peep
       = image_tag(p.gravatar_url(:size => 64), :alt => p.name)
     
-- content_for(:sidebar) do
-  %h2 Tweets
-  = render :partial => 'tweet', :collection => @tweets
+-# - content_for(:sidebar) do
+-#   %h2 Tweets
+-#   = render :partial => 'tweet', :collection => @tweets
