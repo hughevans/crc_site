@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class Tweet < OpenStruct
   def self.all
     users         = Person.all(:select => 'twitter_user', :conditions => 'twitter_user IS NOT NULL')
