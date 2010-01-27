@@ -1,5 +1,6 @@
 log/*.log
-tmp/**/*
+tmp
+bin
 .DS_Store
 doc/api
 doc/app
@@ -10,3 +11,4 @@ config/deploy.yml
 public/cache
 public/index.html
 public/hacks.html
+vendor/bundler_gems
