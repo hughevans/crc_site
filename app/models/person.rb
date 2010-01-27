@@ -1,6 +1,6 @@
-class Person < ActiveRecord::Base
-  include Gravtastic
+include Gravtastic
 
+class Person < ActiveRecord::Base
   is_gravtastic!
 
   validates_length_of     :email, :within  => 6..250
